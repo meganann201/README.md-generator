@@ -60,3 +60,50 @@ const questions = [{
     message: "provide examples on how to run tests for your application."
   }
 ];
+
+
+prompt = () => {
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      let markdown = generateMarkdown(answers)
+      console.log(markdown)
+      // create markdown file
+      writeFile(markdown)
+    })
+    .catch((error) => {
+      if (error.isTtyError) {
+        // Prompt couldn't be rendered in the current environment
+      } else {
+        // Something else went wrong
+      }
+    });
+}
+
+
+
+// TODO: Create a function to write README file
+const writeFile = fileContent => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile('your-README.md', fileContent, err => {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      resolve({
+        ok: true,
+        message: 'File created!'
+      });
+    });
+  });
+};
+
+// TODO: Create a function to initialize app
+function init() {
+  prompt();
+}
+
+// Function call to initialize app
+init();
+

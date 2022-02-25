@@ -2,7 +2,7 @@
 
 ## Description
 This is a command-line application that runs with Node.js that dynamically generates a README.md file based on user input collected with npm package ```Inquirer```.
-
+![Watch my video demonstration here](https://drive.google.com/file/d/1YvAZ7TbTUsTBzWBe8Eo9AQ_M3v2-qaZb/view)
 ## Installation
  
 To generate your own README, git clone the repo.
